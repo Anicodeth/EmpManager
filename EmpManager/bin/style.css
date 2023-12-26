@@ -1,0 +1,9 @@
+.button-styles {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.stack-pane {
+    -fx-background-color: #f0f0f0;
+}
