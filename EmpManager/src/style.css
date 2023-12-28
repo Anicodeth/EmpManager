@@ -1,9 +1,16 @@
+/* style.css */
 .button-styles {
     -fx-background-color: #4CAF50; /* Green */
     -fx-text-fill: white;
     -fx-font-size: 14px;
+    -fx-pref-width: 150px; /* Adjust the width as needed */
 }
 
 .stack-pane {
     -fx-background-color: #f0f0f0;
+}
+
+/* Add styles for VBox */
+.vbox {
+    -fx-spacing: 10; /* Spacing between buttons */
 }

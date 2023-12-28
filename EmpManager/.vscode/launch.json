@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Database",
+            "request": "launch",
+            "mainClass": "database.Database",
+            "projectName": "EmpManager_8d773ab7"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -17,7 +24,6 @@
             "mainClass": "App",
             "projectName": "EmpManager_8d773ab7",
             "vmArgs": "--module-path E:/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1/lib --add-modules javafx.controls,javafx.fxml"
-
         }
     ]
 }
