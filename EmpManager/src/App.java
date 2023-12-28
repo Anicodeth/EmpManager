@@ -25,7 +25,6 @@ public class App extends Application {
         primaryStage.setTitle("Employee Management System");
         Image image = new Image(getClass().getResourceAsStream("./assets/Emp.png")); // Replace with the actual image file
 
-        // Create an ImageView
         ImageView imageView = new ImageView(image);
         Button registerButton = new Button("Register Employee");
         Button detailsButton = new Button("Employee Details");
@@ -37,7 +36,6 @@ public class App extends Application {
         registerButton.setOnAction(e -> registerWindow.openRegisterWindow());
         detailsButton.setOnAction(e -> detailsWindow.openDetailsWindow());
 
-        // Use a VBox for organizing buttons vertically
         VBox vbox = new VBox(10); // 10 is the spacing between buttons
         vbox.setAlignment(Pos.CENTER); // Center the buttons
         vbox.getStyleClass().add("stack-pane"); // Add a style class to your root stack pane
@@ -50,8 +48,4 @@ public class App extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
-
-
-
 }

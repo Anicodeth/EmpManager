@@ -40,6 +40,7 @@ public class DetailsWindow {
 
         // Button for updating selected employee
         Button updateButton = new Button("Update");
+        updateButton.getStyleClass().add("button-styles");
         updateButton.setOnAction(event -> {
             Employee selectedEmployee = tableView.getSelectionModel().getSelectedItem();
             if (selectedEmployee != null) {
@@ -49,6 +50,7 @@ public class DetailsWindow {
 
         // Button for deleting selected employee
         Button deleteButton = new Button("Delete");
+        deleteButton.getStyleClass().add("button-styles");
         deleteButton.setOnAction(event -> {
             Employee selectedEmployee = tableView.getSelectionModel().getSelectedItem();
             if (selectedEmployee != null) {
@@ -67,8 +69,10 @@ public class DetailsWindow {
         detailsVBox.setAlignment(Pos.CENTER); // Center the components
         detailsVBox.getChildren().addAll(searchBox, tableView, updateButton, deleteButton);
 
+        Scene scene = new Scene(detailsVBox, 700, 550);
+        scene.getStylesheets().add(getClass().getResource("../style.css").toExternalForm());
         // Set the VBox as the root of the scene
-        detailsStage.setScene(new Scene(detailsVBox, 800, 600));
+        detailsStage.setScene(scene);
         detailsStage.show();
     }
     private void filterTable(String searchTerm) {
@@ -84,7 +88,7 @@ public class DetailsWindow {
     }
     private TableView<Employee> createTableView() {
         
-
+        refreshTable(tableView);
         // Create TableColumn instances
         TableColumn<Employee, String> firstNameCol = new TableColumn<>("First Name");
         TableColumn<Employee, String> lastNameCol = new TableColumn<>("Last Name");

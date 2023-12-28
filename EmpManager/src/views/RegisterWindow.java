@@ -3,6 +3,7 @@ package views;
 import database.Database;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -56,6 +57,8 @@ public class RegisterWindow {
                     Date.valueOf(dobDatePicker.getValue()),
                     Double.parseDouble(salaryTextField.getText())
             );
+
+            showSuccessDialog();
         });
 
         VBox registerVBox = new VBox(10);
@@ -72,7 +75,26 @@ public class RegisterWindow {
                 submitButton
         );
 
-        registerStage.setScene(new Scene(registerVBox, 600, 500));
+        registerStage.setScene(new Scene(registerVBox, 400, 650));
+        registerStage.getScene().getStylesheets().add(getClass().getResource("../style.css").toExternalForm());
+        // Apply styles to labels
+    firstNameLabel.getStyleClass().add("label");
+    lastNameLabel.getStyleClass().add("label");
+    // ... (repeat for other labels)
+
+    // Apply styles to text fields
+    firstNameTextField.getStyleClass().add("text-field");
+    lastNameTextField.getStyleClass().add("text-field");
+    // ... (repeat for other text fields)
+
+    // Apply styles to date picker
+    dobDatePicker.getStyleClass().add("date-picker");
+
+    // Apply styles to button
+    submitButton.getStyleClass().add("button");
+
+    // Apply styles to VBox
+    registerVBox.getStyleClass().add("vboxR");
         registerStage.show();
     }
 
@@ -80,5 +102,13 @@ public class RegisterWindow {
     private void addEmployee(String firstName, String lastName, String position,
                              String address, String email, String phone, Date dob, double salary) {
         Database.addEmployee(firstName, lastName, position, address, email, phone, dob, salary);
+    }
+
+    private void showSuccessDialog() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText("Employee added successfully!");
+        alert.showAndWait();
     }
 }

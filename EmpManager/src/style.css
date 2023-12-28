@@ -14,3 +14,30 @@
 .vbox {
     -fx-spacing: 10; /* Spacing between buttons */
 }
+
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.button {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 150px; 
+}
+
+.date-picker {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.vboxR {
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+}
